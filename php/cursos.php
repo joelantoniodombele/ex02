@@ -29,7 +29,7 @@
             </div>
 </div>
 <div class="container">
-            <a href="#">
+            <a href="formCurso.php">
                 <div class="icon">
                     <img src="../imagens/adicionar-ficheiro.png" alt="">
                     <h3>Adicionar Cursos</h3>
