@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="../css/style.css">
 
 <?php
-include 'connection.php';
+require_once 'connection.php';
 
  
 

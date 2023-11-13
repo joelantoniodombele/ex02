@@ -6,7 +6,7 @@
            <main class="listarPrincipal">
                 <h2>Aulas Disponiveis</h2>
                 <?php
-                   include 'connection.php'; // Inclua a classe de conexão com o banco de dados
+                  require_once 'connection.php'; // Inclua a classe de conexão com o banco de dados
                   // Criar um objeto de conexão
                   $database = new DB();
                   $conn = $database->connect();

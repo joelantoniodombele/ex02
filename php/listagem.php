@@ -4,7 +4,7 @@
 </header>
 <main class="listarPrincipal">
     <?php
-    include 'connection.php'; // Inclua a classe de conexão com o banco de dados
+   require_once 'connection.php'; // Inclua a classe de conexão com o banco de dados
     
     // Criar um objeto de conexão
     $database = new DB();
