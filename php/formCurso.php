@@ -7,21 +7,23 @@
 </head>
 <body>
 <h1>Cadastrar Cursos</h1>
-<form action="teste.php" method="get">
+<form action="teste.php" method="post" enctype="multipart/form-data">
     <label for="nome_curso">Nome do curso</label><br>
     <input type="text" required name="nome_curso"><br><br>
 
     <label for="categoria">Categoria</label>
     <select name="categoria" id="categoria">
+
     <?php
     include 'connetion.php';
 
 
-    echo "<option value='x' >xdss</option>";
+    echo "<option value='x' >Programação</option>";
 
     ?>    
         
-    </select>
+    </select><br><br>
+
     <label for="descricao">Descricão </label><br>
     <textarea id="descricão" name="descriçao" rows="4" cols="50"></textarea ><br><br>
 
@@ -36,7 +38,7 @@
     <label for="imagem">Imagem de capa</label><br><br>
     <input type="file" name="imagem" id="imagem" required>
 
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Enviar" name="confirmar">
 
 </form>
   
