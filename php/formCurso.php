@@ -36,7 +36,7 @@
     </select><br><br>
 
     <label for="imagem">Imagem de capa</label><br><br>
-    <input type="file" name="imagem" id="imagem" required>
+    <input type="file" name="imagem" id="imagem" required><br><br>
 
     <input type="submit" value="Enviar" name="confirmar">
 

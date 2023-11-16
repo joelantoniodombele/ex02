@@ -36,8 +36,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!move_uploaded_file($imagem["tmp_name"], $caminho_completo)) {
-        echo "Ocorreu um erro ao enviar o arquivo de imagem.";
-        exit;
+      If (!move_uploaded_file($imagem["tmp_name"], $caminho_completo)) {
+        switch ($imagem['error']) {
+            case UPLOAD_ERR_INI_SIZE:
+                echo "O arquivo excede o limite definido na configuração do PHP (upload_max_filesize).";
+                break;
+            case UPLOAD_ERR_FORM_SIZE:
+                echo "O arquivo enviado excede o limite definido no formulário HTML.";
+                break;
+            case UPLOAD_ERR_PARTIAL:
+                echo "O upload do arquivo foi feito parcialmente.";
+                break;
+            case UPLOAD_ERR_NO_FILE:
+                echo "Nenhum arquivo foi enviado.";
+                break;
+            case UPLOAD_ERR_NO_TMP_DIR:
+                echo "Pasta temporária ausente.";
+                break;
+        case UPLOAD_ERR_CANT_WRITE:
+            echo "Falha ao escrever o arquivo no disco.";
+            break;
+        case UPLOAD_ERR_EXTENSION:
+            echo "Uma extensão do PHP interrompeu o upload.";
+            break;
+        default:
+            echo "Ocorreu um erro desconhecido ao enviar o arquivo de imagem.";
+            break;
+    }
+    exit;
+  
+  
+  }
     }
 
     // Insere o caminho do arquivo de imagem no banco de dados

@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) { // Verifica se a consulta retornou algum resultado
-            header("Location: ../html/home.html"); // Redireciona para home.html
+            header("Location: ../php/dashboard.php"); // Redireciona para home.html
         } else {
             header("Location: ../html/erro.html"); // Redireciona para erro.html
         }
