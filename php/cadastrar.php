@@ -77,7 +77,7 @@ if (strlen($senha) < 8) {
         <input type="password" name="senha" value=" " required placeholder="Senha">
         <br><br>
 
-        <input type="submit" value="enviar" name="confirmar">
+        <input type="submit" value="Enviar" name="confirmar">
          
         
         </div>
