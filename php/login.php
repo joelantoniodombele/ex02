@@ -29,34 +29,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
     
-
-
-
-<link rel="stylesheet" href="../css/style.css">
-
-<header>
-  <h1>Estudando PHP</h1>
-</header>
-
-<main>
-
-<h1>Faça Login</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocumeRent</title>
+    <link rel="stylesheet" href="../css/suzana.css">
+</head>
+<body>
 <form  method="post">
 
-<fieldset>
-    
-     
-    <label for="email">Email</label>
-    <input type="email" name="email" value=" " required>
-    <p class="espaco"></p>
 
-    <label for="senha">Senha</label>
-    <input type="text" name="senha" value=" " required>
-    <p class="espaco"></p>
-    
-    <input type="submit" value="Login" name="login" >
-</fieldset>
+<div>
+    <h1>Login</h1>
+    <input type="email"  placeholder="Email" name="email">
+    <br><br>
+    <input type="password" placeholder="Senha" name="senha">
+    <br><br>
+    <input type="submit" value="Entrar" name="login">
+    <p>Tens uma conta ? <a href="../php/cadastrar.php">Registra-te</a></p>
+    </div>
 
 
 </form>
-</main>
+</body>
+</html>
+
+
+

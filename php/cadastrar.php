@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="../css/style.css">
 
+<link rel="stylesheet" href="../css/suzana.css">
 <?php
 require_once 'connection.php';
 
@@ -54,33 +54,36 @@ if (strlen($senha) < 8) {
 
 }  
  ?>
-
-<header>
-  <h1>Estudando PHP</h1>
-</header>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 <main>
 
 
-<h1>Cadastrar Usuario</h1>
+
 <form  method="post">
 
-<fieldset>
-    <label for="nome">Nome</label>
-    <input type="text" name="nome" value=" " required>
-    <p class="espaco"></p>
-    
-    <label for="email">Email</label>
-    <input type="email" name="email" value=" " required>
-    <p class="espaco"></p>
+   <div>
+        <h1>Registra-te</h1>
+        <input type="text" name="nome" value=" " required placeholder="Nome">
+        <br><br>
+        <input type="email" name="email" value=" " required placeholder="Email">
+        <br><br>
+        <input type="password" name="senha" value=" " required placeholder="Senha">
+        <br><br>
 
-    <label for="senha">Senha</label>
-    <input type="text" name="senha" value=" " required>
-    <p class="espaco"></p>
+        <button>Enviar</button>
     
-    <input type="submit" value="Salvar" name="confirmar" >
-</fieldset>
+        
+        </div>
 
 
 </form>
 </main>
+</body>
+</html>
