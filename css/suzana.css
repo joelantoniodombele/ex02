@@ -28,10 +28,10 @@ body{
      div a :hover{
         color:blue;
      }
-     button{
-        background-color: rgba(0, 110, 255, 0.866);
-        border: none;
-        padding: 15px;
-        width: 100%;
-        border-radius: 10px;
-     }
+     input[type="submit"] {
+      background-color: rgba(0, 110, 255, 0.866);
+      border: none;
+      padding: 15px;
+      width: 100%;
+      border-radius: 10px;
+  }

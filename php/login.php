@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <br><br>
     <input type="password" placeholder="Senha" name="senha">
     <br><br>
-    <input type="submit" value="Entrar" name="login">
+    <input type="submit" value="Entrar" name="login" >
     <p>Tens uma conta ? <a href="../php/cadastrar.php">Registra-te</a></p>
     </div>
 
