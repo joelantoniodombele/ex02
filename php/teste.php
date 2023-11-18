@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../css/suzana.css">
 <?php
 require_once 'connection.php';
 
@@ -63,19 +64,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<?php
-
-    // ... (seu código de inserção no banco de dados)
-if ($stmt->execute()) {
-    // Obtenha o ID do registro inserido
-    $ultimo_id = $conn->lastInsertId();
-    // Redirecione para a página de exibição da imagem com o ID do registro
-    header("Location: exibe_imagem.php?id=$ultimo_id");
-    exit;
-}
 
 
-?>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body class="listCourse">
+      <main>
+      <?php
+   require_once 'connection.php'; // Inclua a classe de conexão com o banco de dados
+    
+    // Criar um objeto de conexão
+    $database = new DB();
+    $conn = $database->connect();
+    
+    // Consulta para selecionar todos os usuários
+    $query = "SELECT id, nome, instrutor_id, categoria_id FROM cursos";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    
+    // Verificar se existem registros
+    if ($stmt->rowCount() > 0) {
+        echo "<h1>Lista de Cursos</h1>";
+        echo "<table>";
+        echo "<tr><th>ID</th><th>Nome</th><th>Instrutor</th><th>Categoria</th></tr>";
+    
+        // Loop para exibir os registros
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<tr>";
+            echo "<td>" . $row['id'] . "</td>";
+            echo "<td>" . $row['nome'] . "</td>";
+            echo "<td>" . $row['instrutor_id'] . "</td>";
+            echo "<td>" . $row['categoria_id'] . "</td>";
+            echo "</tr>";
+        }
+    
+        echo "</table>";
+    } else {
+        echo "Nenhum usuário encontrado.";
+    }
+    ?>
+      </main>
+    </body>
+    </html>
 
 
 
