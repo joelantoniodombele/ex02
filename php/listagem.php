@@ -1,8 +1,15 @@
-<link rel="stylesheet" href="../css/listagem.css">
-<header>
-  <h1>Estudando PHP</h1>
-</header>
-<main class="listarPrincipal">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/suzana.css">
+</head>
+<body>
+
+
+<main >
     <?php
    require_once 'connection.php'; // Inclua a classe de conexão com o banco de dados
     
@@ -37,3 +44,6 @@
     }
     ?>
 </main>
+
+</body>
+</html>
