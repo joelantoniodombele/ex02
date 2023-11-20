@@ -108,6 +108,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: white;
             text-decoration: none;
         }
+        h1{
+            color: white;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
