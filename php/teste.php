@@ -67,52 +67,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body class="listCourse">
-      <main>
-      <?php
-   require_once 'connection.php'; // Inclua a classe de conexão com o banco de dados
-    
-    // Criar um objeto de conexão
-    $database = new DB();
-    $conn = $database->connect();
-    
-    // Consulta para selecionar todos os usuários
-    $query = "SELECT id, nome, instrutor_id, categoria_id FROM cursos";
-    $stmt = $conn->prepare($query);
-    $stmt->execute();
-    
-    // Verificar se existem registros
-    if ($stmt->rowCount() > 0) {
-        echo "<h1>Lista de Cursos</h1>";
-        echo "<table>";
-        echo "<tr><th>ID</th><th>Nome</th><th>Instrutor</th><th>Categoria</th></tr>";
-    
-        // Loop para exibir os registros
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<tr>";
-            echo "<td>" . $row['id'] . "</td>";
-            echo "<td>" . $row['nome'] . "</td>";
-            echo "<td>" . $row['instrutor_id'] . "</td>";
-            echo "<td>" . $row['categoria_id'] . "</td>";
-            echo "</tr>";
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cursos</title>
+</head>
+<body class="listCourse">
+    <main>
+        <?php
+        require_once 'connection.php'; // Inclua a classe de conexão com o banco de dados
+
+        // Criar um objeto de conexão
+        $database = new DB();
+        $conn = $database->connect();
+
+        // Consulta para selecionar todos os cursos
+        $query = "SELECT id, nome FROM cursos"; // Ajuste a consulta para pegar apenas o ID e o nome do curso
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+
+        // Verificar se existem registros
+        if ($stmt->rowCount() > 0) {
+            echo "<h1>Lista de Cursos</h1>";
+            echo "<ul>";
+            
+            // Loop para exibir os registros como links
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $id_curso = $row['id'];
+                $nome_curso = $row['nome'];
+                
+                // Cria um link dinâmico para a página de aulas por curso
+                echo "<li><a href='listarAula.php?id_curso=$id_curso'>$nome_curso</a></li>";
+            }
+            
+            echo "</ul>";
+        } else {
+            echo "Nenhum curso encontrado.";
         }
-    
-        echo "</table>";
-    } else {
-        echo "Nenhum usuário encontrado.";
-    }
-    ?>
-      </main>
-    </body>
-    </html>
-
-
-
-
+        ?>
+    </main>
+</body>
+</html>

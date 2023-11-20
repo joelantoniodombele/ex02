@@ -32,9 +32,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/suzana.css">
 </head>
 <body>
-    <h1>Adicionar Categoria</h1>
+    <div>
+        <h1>Adicionar Categoria</h1>
     <?php if (!empty($mensagem)) : ?>
         <script type='text/javascript'>alert('<?php echo $mensagem; ?>');</script>
     <?php endif; ?>
@@ -47,5 +49,6 @@
 
         <input type="submit" value="Adicionar" name="add">
     </form> 
+    </div>
 </body>
 </html>

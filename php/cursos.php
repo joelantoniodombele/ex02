@@ -35,7 +35,7 @@
                     <h3>Adicionar Cursos</h3>
                 </div>
             </a>
-            <a href="#">
+            <a href="teste.php">
                 <div class="icon">
                     <img src="../imagens/curso-online.png" alt="">
                     <h3>Gerenciar Cursos</h3>

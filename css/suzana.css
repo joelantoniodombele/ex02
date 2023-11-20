@@ -12,12 +12,14 @@ body{
         padding: 80px; 
        border-radius: 15px;
         color: white;
+       
         
      }
      input[type="submit"],
      input[type="text"],
      input[type="email"],
-     input[type="password"]
+     input[type="password"],
+     textarea
      {
       width: 100%;
       padding: 15px;
