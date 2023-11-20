@@ -77,40 +77,91 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Cursos</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn-editar, .btn-eliminar {
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+        .btn-editar {
+            background-color: #007bff;
+        }
+        .btn-eliminar {
+            background-color: #dc3545;
+        }
+        table a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
-<body class="listCourse">
-    <main>
-        <?php
-        require_once 'connection.php'; // Inclua a classe de conexão com o banco de dados
+<body>
+    <h1>Lista de Cursos</h1>
 
-        // Criar um objeto de conexão
-        $database = new DB();
-        $conn = $database->connect();
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            require_once 'connection.php';
 
-        // Consulta para selecionar todos os cursos
-        $query = "SELECT id, nome FROM cursos"; // Ajuste a consulta para pegar apenas o ID e o nome do curso
-        $stmt = $conn->prepare($query);
-        $stmt->execute();
+            // Criar um objeto de conexão
+            $database = new DB();
+            $conn = $database->connect();
 
-        // Verificar se existem registros
-        if ($stmt->rowCount() > 0) {
-            echo "<h1>Lista de Cursos</h1>";
-            echo "<ul>";
-            
-            // Loop para exibir os registros como links
+            // Consulta ao banco de dados para obter os cursos
+            $query = "SELECT id, nome, categoria_id FROM cursos";
+            $stmt = $conn->prepare($query);
+            $stmt->execute();
+
+            // Exibir a lista de cursos em forma de tabela
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $id_curso = $row['id'];
                 $nome_curso = $row['nome'];
-                
-                // Cria um link dinâmico para a página de aulas por curso
-                echo "<li><a href='listarAula.php?id_curso=$id_curso'>$nome_curso</a></li>";
+                $categoria_id = $row['categoria_id'];
+
+                // Consulta para obter o nome da categoria
+                $query_categoria = "SELECT nome FROM categorias WHERE id = :categoria_id";
+                $stmt_categoria = $conn->prepare($query_categoria);
+                $stmt_categoria->bindParam(':categoria_id', $categoria_id, PDO::PARAM_INT);
+                $stmt_categoria->execute();
+                $categoria = $stmt_categoria->fetch(PDO::FETCH_ASSOC);
+                $nome_categoria = ($categoria && isset($categoria['nome'])) ? $categoria['nome'] : "Não especificado";
+
+                // Exibir os cursos como linhas de tabela com links clicáveis e botões de editar/eliminar
+                echo "<tr>";
+                echo "<td>$id_curso</td>";
+                echo "<td> <a href='listarAula.php?id_curso=$id_curso'>$nome_curso</a/td>";
+                echo "<td>$nome_categoria</td>";
+                echo "<td>
+                        <a href='editarCurso.php?id_curso=$id_curso' class='btn-editar'>Editar</a>
+                        <a href='eliminarCurso.php?id_curso=$id_curso' class='btn-eliminar'>Eliminar</a>
+                      </td>";
+                echo "</tr>";
             }
-            
-            echo "</ul>";
-        } else {
-            echo "Nenhum curso encontrado.";
-        }
-        ?>
-    </main>
+            ?>
+        </tbody>
+    </table>
 </body>
 </html>
