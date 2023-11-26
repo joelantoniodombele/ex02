@@ -13,18 +13,20 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">Cursos</a></li>
                 <li><a href="#">Categorias</a></li>
-                <li><a href="#" class="ctn">Login</a></li>
-                <li><a href="#" class="ctn">sign in</a></li>
+                <li><a href="login.php" class="ctn">Login</a></li>
+                <li><a href="cadastrar.php" class="ctn">sign in</a></li>
             </ul>
             <img src="../imagens/menu-aberto.png" alt="" class="menu-bnt">
 
     </nav>
     <header>
-        <div class="header-content">
-            <h2>Faça os melhores Cursos Aqui</h2>
-            <div class="line"></div>
-            <h1>Encontre a tua inspiração</h1>
-            <a href="#" class="ctn">Aprenda mais</a>
+        <div class="overlay">
+            <div class="header-content">
+                <h2>Faça os melhores Cursos Aqui</h2>
+                <div class="line"></div>
+                <h1>Encontre a tua inspiração</h1>
+                <a href="#" class="ctn">Aprenda mais</a>
+            </div>
         </div>
     </header>
 
@@ -60,11 +62,13 @@
     </section>
 
     <section class="explore">
-        <div class="explore-content">
-        <h1>Explore o seu Cerebro</h1>
-        <div class="line"></div>
-        <p>Explore as vastidões do seu cérebro, pois é nesse território que encontramos a inspiração e a capacidade de criar mundos inteiros.</p>
-        <a href="#" class="ctn">Ensine conosco</a>
+        <div class="overlay-explore">
+            <div class="explore-content">
+            <h1>Explore o seu Cerebro</h1>
+            <div class="line"></div>
+            <p>Explore as vastidões do seu cérebro, pois é nesse território que encontramos a inspiração e a capacidade de criar mundos inteiros.</p>
+            <a href="#" class="ctn">Ensine conosco</a>
+            </div>
         </div>
     </section>
     <section class="tours">

@@ -14,9 +14,21 @@ header{
     justify-content: center;
    
 }
+nav h1{
+    color: whitesmoke;
+}
+.overlay {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3); 
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
 a{
     text-decoration: none;
-    color:rgba(255, 0, 0, 0.712) ;
+    color:whitesmoke ;
+    font-weight: 200;
 }
 .header-content{
     margin-bottom: 150px;
@@ -50,7 +62,7 @@ ul{
 }
 .active{
     color:rgba(255, 0, 0, 0.712) ;
-    text-decoration: underline;
+    
 }
 body, html{
     overflow-x:hidden ;
@@ -107,13 +119,20 @@ body, html{
  }
  .explore{
     width: 100%;
-    height: 80vh;
+    min-height: 90vh;
     background-color: rgba(255, 255, 255, 0.5);
     background-image: url('../imagens/fundo5.jpg');
     background-position: center;
     background-size: cover;background-repeat: no-repeat;
     display: flex;
     align-items: center;
+ }
+ .overlay-explore{
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3); 
+   
  }
  .explore-content{
     width: 50%;
