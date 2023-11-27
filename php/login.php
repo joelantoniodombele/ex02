@@ -37,11 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>DocumeRent</title>
     <link rel="stylesheet" href="../css/suzana.css">
 </head>
-<body>
+<body class="view">
 <form  method="post">
 
 
-<div>
+<div class="form">
     <h1>Login</h1>
     <input type="email"  placeholder="Email" name="email">
     <br><br>

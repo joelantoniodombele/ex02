@@ -34,8 +34,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/suzana.css">
 </head>
-<body>
-    <div>
+<body class="view">
+    <div class="form">
         <h1>Adicionar Categoria</h1>
     <?php if (!empty($mensagem)) : ?>
         <script type='text/javascript'>alert('<?php echo $mensagem; ?>');</script>

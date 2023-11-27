@@ -67,7 +67,7 @@
             <h1>Explore o seu Cerebro</h1>
             <div class="line"></div>
             <p>Explore as vastidões do seu cérebro, pois é nesse território que encontramos a inspiração e a capacidade de criar mundos inteiros.</p>
-            <a href="#" class="ctn">Ensine conosco</a>
+            <a href="instrutor.php" class="ctn">Ensine conosco</a>
             </div>
         </div>
     </section>

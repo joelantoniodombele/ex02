@@ -61,14 +61,14 @@ if (strlen($senha) < 8) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
+<body class="view">
 <main>
 
 
 
 <form  method="post">
 
-   <div>
+   <div class="form">
         <h1>Registra-te</h1>
         <input type="text" name="nome" value=" " required placeholder="Nome">
         <br><br>

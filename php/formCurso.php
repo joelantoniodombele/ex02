@@ -28,8 +28,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/suzana.css">
 </head>
-<body>
-    <div>
+<body class="view">
+    <div class="form">
     <h1>Cadastrar Cursos</h1>
     <form action="teste.php" method="post" enctype="multipart/form-data">
         <label for="nome_curso">Nome do curso</label><br>

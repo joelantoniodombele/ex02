@@ -43,8 +43,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/suzana.css">
 </head>
-<body>
-<div>  
+<body class="view">
+<div class="form">  
     <h1>Adicionar Aulas</h1>  
 <form action="" method="post">
     <label for="nome_aula">Título da Aula:</label>

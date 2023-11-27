@@ -1,11 +1,11 @@
-body{
+.view{
     font-family:Arial, Helvetica, sans-serif ;
     background-image: url('../imagens/capa.jpg');
     background-color: rgba(0, 128, 255, 0.884);
     background-size: cover;
    
      }
-     div{
+     .form{
          background-color:rgba(0, 0, 0, 0.8);
         position: absolute;
         top: 50%;
