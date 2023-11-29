@@ -59,6 +59,21 @@ header{
     max-width: 400px; /* Largura máxima do formulário */
     margin: 0 auto; 
 }
+
+/* Estilos para os links de cursos dentro do summary */
+details summary + .cursos-links .curso-link {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+  }
+  summary{
+    color: whitesmoke;
+  }
+  
 .form h1{
     color: white;
 }

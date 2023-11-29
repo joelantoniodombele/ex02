@@ -1,8 +1,8 @@
 <?php
+
 require_once("connection.php");
 
-$database = new DB();
-$conn = $database->connect();
+$error = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['login'])) {
@@ -10,25 +10,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
 
+        // Validar e limpar a entrada
+        $email = trim($email);
+        $senha = trim($senha);
+
         $database = new DB();
         $conn = $database->connect();
 
-        $query = "SELECT email, senha FROM usuario WHERE email = :email AND senha = :senha"; // Adicione a cláusula WHERE
+        // Use uma cláusula WHERE para verificar a combinação de email e senha_hash
+        $query = "SELECT email, senha FROM usuario WHERE email = :email";
 
         $stmt = $conn->prepare($query);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':senha', $senha);
         $stmt->execute();
 
-        if ($stmt->rowCount() > 0) { // Verifica se a consulta retornou algum resultado
-            header("Location: ../php/dashboard.php"); // Redireciona para home.html
+        if ($stmt->rowCount() > 0) {
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (password_verify($senha, $result['senha'])) {
+                header("Location: ../php/dashboard.php");
+                exit;
+            } else {
+                $error = "A senha está incorreta.";
+            }
         } else {
-            header("Location: ../php/dashboard.php"); // Redireciona para erro.html
+            $error = "O email não está cadastrado.";
         }
     }
 }
 ?>
-    
+
+<!-- Exibir mensagem de erro, se houver -->
+<?php if ($error): ?>
+    <p><?= $error ?></p>
+<?php endif; ?>    
 <!DOCTYPE html>
 <html lang="en">
 <head>

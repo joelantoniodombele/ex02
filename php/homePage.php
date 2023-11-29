@@ -10,13 +10,21 @@
     <nav class="navBar">
             <h1 class="logo">EAD</h1>
             <ul class="nav-links">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Cursos</a></li>
-                <li><a href="#">Categorias</a></li>
-                <li><a href="login.php" class="ctn">Login</a></li>
-                <li><a href="cadastrar.php" class="ctn">sign in</a></li>
-            </ul>
-            <img src="../imagens/menu-aberto.png" alt="" class="menu-bnt">
+  <li class="active"><a href="#">Home</a></li>
+  <li>
+    <details>
+      <summary>Cursos</summary>
+      <div class="cursos-links">
+        <a href="" class="curso-link">Cursos Gratuitos</a>
+        <a href="#" class="curso-link">Cursos Pagos</a>
+      </div>
+    </details>
+  </li>
+  <li><a href="#">Categorias</a></li>
+  <li><a href="login.php" class="ctn">Login</a></li>
+  <li><a href="cadastrar.php" class="ctn">Sign in</a></li>
+</ul>
+ <img src="../imagens/menu-aberto.png" alt="" class="menu-bnt">
 
     </nav>
     <header>
