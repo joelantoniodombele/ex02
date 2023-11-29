@@ -70,11 +70,11 @@ if (strlen($senha) < 8) {
 
    <div class="form">
         <h1>Registra-te</h1>
-        <input type="text" name="nome" value=" " required placeholder="Nome">
+        <input type="text" name="nome" required placeholder="Nome">
         <br><br>
-        <input type="email" name="email" value=" " required placeholder="Email">
+        <input type="email" name="email" required placeholder="Email">
         <br><br>
-        <input type="password" name="senha" value=" " required placeholder="Senha">
+        <input type="password" name="senha" required placeholder="Senha">
         <br><br>
 
         <input type="submit" value="Enviar" name="confirmar">

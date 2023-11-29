@@ -14,6 +14,75 @@ header{
     justify-content: center;
    
 }
+.instrutor{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../imagens/i.jpg');
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+     
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Ajuste a altura conforme necessário */
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.text {
+    
+    padding: 20px;
+    text-align: center;
+}
+.container p{
+    text-align: justify;
+}
+
+.form {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color:rgba(0, 0, 0, 0.8);
+    text-align: center;
+    text-align: center;
+    width: 200px; /* Largura do formulário */
+    max-width: 400px; /* Largura máxima do formulário */
+    margin: 0 auto; 
+}
+.form h1{
+    color: white;
+}
+input[type="submit"],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea
+{
+ width: 100%;
+ padding: 15px;
+ border-radius: 10px;
+ box-sizing: border-box; /* Esta linha é importante para o dimensionamento correto */
+  }     
+  input[type="submit"] {
+    background-color: rgba(0, 128, 255, 0.884);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+
+}
+
 nav h1{
     color: whitesmoke;
 }
