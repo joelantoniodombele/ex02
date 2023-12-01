@@ -47,7 +47,7 @@
     
   <details>
       <summary>Categorias</summary>
-      <div class="cursos-links"
+      <div class="cursos-links">>
               
         <?php 
          // Cria as opções do select

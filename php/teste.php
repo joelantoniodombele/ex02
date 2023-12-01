@@ -2,17 +2,29 @@
 <?php
 require_once 'connection.php';
 
-function uploadImagem($arquivo, $diretorioDestino) {
-    // ... código da função uploadImagem ...
+function uploadImagem($vetor) {
+    $vtipo = explode('/', $vetor['type']);
+    $tipo = isset($vtipo[0]) ? $vtipo[0] : '';
+    $extensao = isset($vtipo[1]) ? $vtipo[1] : '';
 
-    // Obtém o nome do arquivo enviado
-    $nomeArquivo = $arquivo['name'];
+    if ((!$vetor['error']) and (!$vetor['size'] <= 500000) and ($tipo == "image")) {
+        $nome = date('Ymd') . "emerson_coder" . $extensao;
 
-    // Define o caminho completo da imagem após o upload
-    $caminho_completo = 'uploads/imagens/cursos/' . $nomeArquivo;
+        $diretorio = '/opt/lampp/htdocs/images'; // Caminho do diretório onde deseja armazenar as imagens
 
-    return $caminho_completo;
+        if (!is_dir($diretorio)) {
+            // Se o diretório não existir, crie um novo
+            mkdir($diretorio, 0777, true); // Permissões 0777 dão acesso total
+        }
+
+        $caminhoCompleto = $diretorio . "/" . $nome;
+        move_uploaded_file($vetor['tmp_name'], $caminhoCompleto);
+        return $caminhoCompleto;
+    } else {
+        return 0;
+    }
 }
+   
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
