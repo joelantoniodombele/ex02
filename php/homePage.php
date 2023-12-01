@@ -1,3 +1,26 @@
+<?php
+            // Abre uma conexão com o banco de dados
+            require_once 'connection.php';
+
+            $database = new DB();
+            $conn = $database->connect();
+
+            // Prepara uma consulta SQL
+            $stmt = $conn->prepare("SELECT id, nome FROM categorias");
+
+            // Executa a consulta SQL
+            $stmt->execute();
+
+            // Obtém os resultados da consulta SQL
+            $categorias = $stmt->fetchAll();
+
+            // Fecha a conexão com o banco de dados
+            $conn = null;
+
+            // Cria as opções do select
+            
+            ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +38,26 @@
     <details>
       <summary>Cursos</summary>
       <div class="cursos-links">
-        <a href="" class="curso-link">Cursos Gratuitos</a>
+        <a href="teste.php" class="curso-link">Cursos Gratuitos</a>
         <a href="#" class="curso-link">Cursos Pagos</a>
       </div>
     </details>
   </li>
-  <li><a href="#">Categorias</a></li>
+  <li>
+    
+  <details>
+      <summary>Categorias</summary>
+      <div class="cursos-links"
+              
+        <?php 
+         // Cria as opções do select
+         foreach ($categorias as $categoria) {
+                echo "<a href'#' class='curso-link'>{$categoria['nome']}</a>";
+            } ?>
+      </div>
+    </details>
+
+</li>
   <li><a href="login.php" class="ctn">Login</a></li>
   <li><a href="cadastrar.php" class="ctn">Sign in</a></li>
 </ul>
