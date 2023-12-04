@@ -52,7 +52,7 @@
         <?php 
          // Cria as opções do select
          foreach ($categorias as $categoria) {
-                echo "<a href'#' class='curso-link'>{$categoria['nome']}</a>";
+                echo "<a href='buscarCursos.php?categoria_id={$categoria['id']}' class='curso-link'>{$categoria['nome']}</a>";
             } ?>
       </div>
     </details>
